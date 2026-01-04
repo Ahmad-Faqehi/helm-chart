@@ -11,7 +11,7 @@ spec:
     path: charts
     helm:
       valueFiles:
-        - ../../../projects/blog-api/values-dev.yaml
+        - projects/blog-api/values-dev.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: backend
