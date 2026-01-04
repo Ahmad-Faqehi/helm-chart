@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "chart.fullname" . }}
+  name: {{ .Values.name | default (include "chart.fullname" .) }}
   namespace: {{ .Values.namespace | default .Release.Namespace }}
   labels:
     {{- include "chart.labels" . | nindent 4 }}
@@ -22,7 +22,7 @@ spec:
         {{- range .hosts }}
         - {{ . | quote }}
         {{- end }}
-      secretName: {{ default (default $root.Values.tlsSecret.name (include "chart.fullname" $root)) .secretName | quote }}
+      secretName: {{ .secretName | default ($root.Values.tlsSecret.name | default $root.Values.name | default (include "chart.fullname" $root)) | quote }}
     {{- end }}
   {{- end }}
   rules:
@@ -35,9 +35,9 @@ spec:
             pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ include "chart.fullname" $ }}
+                name: {{ $.Values.name | default (include "chart.fullname" $) }}
                 port:
-                  number: {{ $.Values.api_port }}
+                  number: {{ $.Values.api_port }} 
           {{- end }}
     {{- end }}
 {{- end }}

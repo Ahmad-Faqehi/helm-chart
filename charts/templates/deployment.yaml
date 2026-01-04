@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "chart.fullname" . }}
+  name: {{ .Values.name | default (include "chart.fullname" .) }}
   namespace: {{ .Values.namespace | default .Release.Namespace }}
   labels:
     {{- include "chart.labels" . | nindent 4 }}
@@ -32,7 +32,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "chart.serviceAccountName" . }}
+      serviceAccountName: {{ .Values.name | default (include "chart.serviceAccountName" .) }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       {{- with .Values.initContainers }}
@@ -70,7 +70,7 @@ spec:
           {{- if .Values.configMap.enabled }}
           envFrom:
             - configMapRef:
-                name: {{ .Values.configMap.name | default (include "chart.fullname" .) }}
+                name: {{ .Values.configMap.name | default .Values.name | default (include "chart.fullname" .) }} 
           {{- else if .Values.envFrom }}
           envFrom:
             {{- toYaml .Values.envFrom | nindent 12 }}
