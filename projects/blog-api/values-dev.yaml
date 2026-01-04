@@ -2,7 +2,7 @@
 replicaCount: 1
 
 # Namespace to set on created resources. Leave empty to use the release namespace.
-name: "ahmed"
+name: "blog-api"
 namespace: "backend"
 api_port: 9090
 
