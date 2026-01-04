@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Ahmad-Faqehi/helm-chart.git
     targetRevision: main
-    path: charts
+    path: charts/
     helm:
       valueFiles:
         - projects/blog-api/values-dev.yaml
