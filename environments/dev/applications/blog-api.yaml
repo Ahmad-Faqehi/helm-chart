@@ -4,7 +4,7 @@ metadata:
   name: blog-api
   namespace: argocd
 spec:
-  project: dev
+  project: projects
   source:
     repoURL: https://github.com/Ahmad-Faqehi/helm-chart.git
     targetRevision: main
