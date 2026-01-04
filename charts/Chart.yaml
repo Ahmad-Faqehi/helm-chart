@@ -1,3 +1,4 @@
+package charts;
 apiVersion: v2
 name: my-app
 description: My Application Helm Chart
