@@ -54,7 +54,7 @@ ingress:
         - path: /
           pathType: Prefix
   tls: 
-  #  - secretName: ""
+   - secretName: ""
      hosts:
        - backend.laber.online
 tlsSecret:
