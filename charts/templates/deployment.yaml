@@ -67,13 +67,20 @@ spec:
           env:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          {{- if .Values.configMap.enabled }}
+          {{- $hasEnvFrom := or .Values.configMap.enabled .Values.envFrom .Values.secret.enabled }}
+          {{- if $hasEnvFrom }}
           envFrom:
+            {{- if .Values.configMap.enabled }}
             - configMapRef:
-                name: {{ .Values.configMap.name | default .Values.name | default (include "chart.fullname" .) }} 
-          {{- else if .Values.envFrom }}
-          envFrom:
+                name: {{ .Values.configMap.name | default .Values.name | default (include "chart.fullname" .) }}
+            {{- end }}
+            {{- if .Values.envFrom }}
             {{- toYaml .Values.envFrom | nindent 12 }}
+            {{- end }}
+            {{- if .Values.secret.enabled }}
+            - secretRef:
+                name: {{ .Values.secret.name | default .Values.name | default (include "chart.fullname" .) }}
+            {{- end }}
           {{- end }}
           {{- with .Values.volumeMounts }}
           volumeMounts:
