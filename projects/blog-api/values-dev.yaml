@@ -120,6 +120,10 @@ configMap:
 
 secret:
   enabled: false
+  # Provide encrypted data (created with kubeseal) as key: sealed-value
+  # encryptedData:
+  #   username: AgCDBvmPJmVsgUiI3ma7U13So2VULJVe///dywIiGBDIW2V3ue5tMFbZDDAix6v/...
+  #   password: AgCb+6cVyXab0uIJzNO4ZR4uFxvZJsBVinyO9Y5Um7Fko6lyrLKlym5Ao5j7pk2rnD7JnRORHA/...
   data: {}
 
 env: []
