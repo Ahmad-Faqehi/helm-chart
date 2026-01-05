@@ -12,9 +12,6 @@ spec:
     helm:
       valueFiles:
         - ../projects/blog-api/values-dev.yaml
-      values: |
-        image:
-          tag: "8"
   destination:
     server: https://kubernetes.default.svc
     namespace: backend
