@@ -11,7 +11,7 @@ spec:
     path: charts/
     helm:
       valueFiles:
-        - ../projects/blog-api/values-prod.yaml
+        - ../projects/blog-api/values-dev.yaml
       values: |
         image:
           tag: "10"
