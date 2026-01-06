@@ -7,7 +7,7 @@ namespace: "front"
 api_port: 80
 
 image:
-  repository: nginx
+  repository: httpd
   pullPolicy: IfNotPresent
   # tag: "9"  # Overrides the image tag whose default is the chart appVersion
 
