@@ -9,7 +9,7 @@ api_port: 9090
 image:
   repository: ahmad75/blog-api
   pullPolicy: IfNotPresent
-  tag: "9"  # Overrides the image tag whose default is the chart appVersion
+  # tag: "9"  # Overrides the image tag whose default is the chart appVersion
 
 imagePullSecrets: []
 nameOverride: ""
