@@ -10,11 +10,11 @@ spec:
     targetRevision: main
     path: charts/
     helm:
-      parameters:
-        - name: image.tag
-          value: "10"
       valueFiles:
         - ../projects/blog-api/values-dev.yaml
+      values: |
+        image:
+          tag: "10"
   destination:
     server: https://kubernetes.default.svc
     namespace: backend
