@@ -14,7 +14,7 @@ spec:
         - ../projects/blog-api/values-dev.yaml
       values: |-
         image:
-          tag: 9
+          tag: 10
   destination:
     server: https://kubernetes.default.svc
     namespace: backend
