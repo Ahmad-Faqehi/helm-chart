@@ -12,7 +12,7 @@ spec:
     helm:
       valueFiles:
         - ../projects/blog-api/values-dev.yaml
-      values: |-
+      values: |
         image:
           tag: 8
   destination:
