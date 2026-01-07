@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: $PROJECT_NAME
+  namespace: argocd
+spec:
+  project: $PROJECT_ENV
+  source:
+    repoURL: https://github.com/Ahmad-Faqehi/helm-chart.git
+    targetRevision: main
+    path: charts/
+    helm:
+      valueFiles:
+        - ../projects/$PROJECT_NAME/values-$PROJECT_ENV.yaml
+      values: |
+        image:
+          tag: $IMAGE_TAG
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: $PROJECT_NAMESPACE
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
