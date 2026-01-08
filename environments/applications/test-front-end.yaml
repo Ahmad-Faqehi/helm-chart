@@ -14,10 +14,10 @@ spec:
         - ../projects/test-front-end/values-.yaml
       values: |-
         image:
-          tag: 4
+          tag: 5
   destination:
     server: https://kubernetes.default.svc
-    namespace: backend
+    namespace: -test-front-end
   syncPolicy:
     automated:
       prune: true
