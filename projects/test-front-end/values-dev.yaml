@@ -1,9 +1,7 @@
 # Default values for the application
 replicaCount: 1
 
-# Namespace to set on created resources. Leave empty to use the release namespace.
 name: "test-front-end"
-namespace: "test-front-end"
 api_port: 80
 
 image:
