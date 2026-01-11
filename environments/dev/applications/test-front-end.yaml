@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-front-end
+  name: dev-test-front-end
   namespace: argocd
 spec:
   project: dev
@@ -14,7 +14,7 @@ spec:
         - ../projects/test-front-end/values-dev.yaml
       values: |-
         image:
-          tag: 21
+          tag: 22
   destination:
     server: https://kubernetes.default.svc
     namespace: dev-test-front-end
