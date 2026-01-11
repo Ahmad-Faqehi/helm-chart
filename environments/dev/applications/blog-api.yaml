@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: blog-api
+  name: dev-blog-api
   namespace: argocd
 spec:
   project: dev
