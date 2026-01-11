@@ -17,7 +17,7 @@ spec:
           tag: 10
   destination:
     server: https://kubernetes.default.svc
-    namespace: backend
+    namespace: dev-backend
   syncPolicy:
     automated:
       prune: true
