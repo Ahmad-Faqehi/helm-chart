@@ -136,7 +136,7 @@ secret:
  
   data: {}
 
-# env: []
+env: []
 envFrom: []
 
 initContainers: []
