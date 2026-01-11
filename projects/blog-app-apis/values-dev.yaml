@@ -1,11 +1,11 @@
 # Default values for the application
 replicaCount: 1
 
-name: "blog-app-api"
+name: "blog-app-apis"
 api_port: 9090
 
 image:
-  repository: ahmad75/blog-api
+  repository: ahmad75/blog-app-apis
   pullPolicy: IfNotPresent
   # tag: "9"  # Overrides the image tag whose default is the chart appVersion
 
