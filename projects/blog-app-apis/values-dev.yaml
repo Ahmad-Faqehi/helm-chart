@@ -47,14 +47,11 @@ ingress:
     # cert-manager.io/cluster-issuer: letsencrypt-prod
     # nginx.ingress.kubernetes.io/ssl-redirect: "true"
   hosts:
-    - host: backend.laber.online
       paths:
         - path: /
           pathType: Prefix
   tls: 
    - secretName: "tls-cert"
-     hosts:
-       - backend.laber.online
 tlsSecret:
   enabled: true
   # Leave empty to default to the chart fullname.
