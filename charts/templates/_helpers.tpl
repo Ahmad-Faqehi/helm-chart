@@ -33,8 +33,8 @@ Create chart name and version as used by the chart label.
 Create the dynamic ingress host based on environment and service name.
 */}}
 {{- define "chart.ingressHost" -}}
-{{- if .Values.env -}}
-  {{- printf "%s-%s.laber.online" .Values.env .Values.name -}}
+{{- if .Values.envs -}}
+  {{- printf "%s-%s.laber.online" .Values.envs .Values.name -}}
 {{- else -}}
   {{- .Values.name -}}.laber.online
 {{- end -}}

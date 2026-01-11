@@ -3,7 +3,7 @@ replicaCount: 1
 
 name: "blog-app-apis"
 api_port: 9090
-env: "dev"
+envs: "dev"
 
 image:
   repository: ahmad75/blog-app-apis
@@ -136,7 +136,7 @@ secret:
  
   data: {}
 
-env: []
+# env: []
 envFrom: []
 
 initContainers: []
