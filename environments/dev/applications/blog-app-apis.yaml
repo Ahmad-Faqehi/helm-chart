@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-blog-app-apis
+  namespace: argocd
+spec:
+  project: dev
+  source:
+    repoURL: https://github.com/Ahmad-Faqehi/helm-chart.git
+    targetRevision: main
+    path: charts/
+    helm:
+      valueFiles:
+        - ../projects/blog-app-apis/values-dev.yaml
+      values: |-
+        image:
+          tag: 13
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev-blog-app-apis
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
