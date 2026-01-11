@@ -28,6 +28,20 @@ Create chart name and version as used by the chart label.
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
+
+{{/*
+Create the dynamic ingress host based on environment and service name.
+*/}}
+{{- define "chart.ingressHost" -}}
+{{- if .Values.env -}}
+  {{- printf "%s-%s.laber.online" .Values.env .Values.name -}}
+{{- else -}}
+  {{- .Values.name -}}.laber.online
+{{- end -}}
+{{- end -}}
+
+
+
 {{/*
 Common labels
 */}}
