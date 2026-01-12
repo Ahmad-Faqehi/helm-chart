@@ -3,6 +3,7 @@ replicaCount: 1
 
 name: "test-front-end"
 api_port: 80
+envs: "dev"
 
 image:
   repository: ahmad75/test-front-end
