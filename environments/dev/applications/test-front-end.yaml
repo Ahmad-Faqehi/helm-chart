@@ -14,7 +14,7 @@ spec:
         - ../projects/test-front-end/values-dev.yaml
       values: |-
         image:
-          tag: 24
+          tag: 26
   destination:
     server: https://kubernetes.default.svc
     namespace: dev-test-front-end
