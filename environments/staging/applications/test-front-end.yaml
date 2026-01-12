@@ -14,7 +14,7 @@ spec:
         - ../projects/test-front-end/values-staging.yaml
       values: |-
         image:
-          tag: 15
+          tag: 27
   destination:
     server: https://kubernetes.default.svc
     namespace: staging-test-front-end
