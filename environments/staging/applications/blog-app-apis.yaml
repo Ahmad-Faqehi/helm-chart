@@ -1,23 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev-blog-app-apis
+  name: staging-blog-app-apis
   namespace: argocd
 spec:
-  project: dev
+  project: staging
   source:
     repoURL: https://github.com/Ahmad-Faqehi/helm-chart.git
     targetRevision: main
     path: charts/
     helm:
       valueFiles:
-        - ../projects/blog-app-apis/values-dev.yaml
+        - ../projects/blog-app-apis/values-staging.yaml
       values: |-
         image:
-          tag: 16
+          tag: 17
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev-blog-app-apis
+    namespace: staging-blog-app-apis
   syncPolicy:
     automated:
       prune: true
