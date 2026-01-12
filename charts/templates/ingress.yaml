@@ -1,6 +1,5 @@
 {{- if .Values.ingress.enabled }}
 {{- $root := . -}}  {{/* Capture the global scope */}}
-{{- $dynamicHost := (include "chart.ingressHost" $root) -}} {{/* Pass global scope to helper */}}
 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -11,13 +10,13 @@ spec:
   tls:
     {{- range .Values.ingress.tls }}
     - hosts:
-        - {{ $dynamicHost | quote }} {{/* Use the pre-calculated variable */}}
+        - {{template "ichart.ingressHost" .}}
       secretName: {{ .secretName | quote }}
     {{- end }}
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
-    - host: {{ $   | quote }} {{/* Use the pre-calculated variable */}}
+    - host: {{template "chart.ingressHost" .}}
       http:
         paths:
           {{- range .paths }}
