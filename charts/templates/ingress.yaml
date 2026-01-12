@@ -10,13 +10,13 @@ spec:
   tls:
     {{- range .Values.ingress.tls }}
     - hosts:
-        - {{template "chart.ingressHost" .}}
+        - {{ include "chart.ingressHost" $ }}
       secretName: {{ .secretName | quote }}
     {{- end }}
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
-    - host: {{template "chart.ingressHost" .}}
+    - host: {{ include "chart.ingressHost" $ }}
       http:
         paths:
           {{- range .paths }}
