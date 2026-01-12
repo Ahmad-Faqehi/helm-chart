@@ -45,6 +45,7 @@ ingress:
   enabled: true
   className: "traefik"
   annotations: {}
+  customIngressHost: ""
     # cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
     - paths:

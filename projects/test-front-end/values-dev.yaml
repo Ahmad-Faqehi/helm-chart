@@ -45,17 +45,15 @@ ingress:
   enabled: true
   className: "traefik"
   annotations: {}
+  customIngressHost: ""
     # cert-manager.io/cluster-issuer: letsencrypt-prod
     # nginx.ingress.kubernetes.io/ssl-redirect: "true"
   hosts:
-    - host: locker.laber.online
-      paths:
+    - paths:
         - path: /
           pathType: Prefix
   tls: 
    - secretName: "tls-cert"
-     hosts:
-       - locker.laber.online
 tlsSecret:
   enabled: true
   # Leave empty to default to the chart fullname.
