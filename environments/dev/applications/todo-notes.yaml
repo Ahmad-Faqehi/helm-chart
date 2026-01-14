@@ -14,7 +14,7 @@ spec:
         - ../projects/todo-notes/values-dev.yaml
       values: |-
         image:
-          tag: 7
+          tag: 9
   destination:
     server: https://kubernetes.default.svc
     namespace: dev-todo-notes
