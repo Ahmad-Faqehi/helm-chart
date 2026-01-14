@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-todo-notes
+  namespace: argocd
+spec:
+  project: prod
+  source:
+    repoURL: https://github.com/Ahmad-Faqehi/helm-chart.git
+    targetRevision: main
+    path: charts/
+    helm:
+      valueFiles:
+        - ../projects/todo-notes/values-prod.yaml
+      values: |-
+        image:
+          tag: 6
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prod-todo-notes
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
