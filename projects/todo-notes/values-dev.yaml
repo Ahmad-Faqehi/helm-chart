@@ -65,7 +65,7 @@ tlsSecret:
 
 resources:
   limits:
-    cpu: 6
+    cpu: 4
     memory: 504Mi
   requests:
     cpu: 4
