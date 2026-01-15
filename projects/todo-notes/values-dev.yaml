@@ -65,10 +65,10 @@ tlsSecret:
 
 resources:
   limits:
-    cpu: 3
+    cpu: 200m
     memory: 504Mi
   requests:
-    cpu: 2
+    cpu: 150m
     memory: 200Mi
 
 livenessProbe:
