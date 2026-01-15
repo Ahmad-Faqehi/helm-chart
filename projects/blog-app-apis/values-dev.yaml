@@ -1,5 +1,5 @@
 # Default values for the application
-replicaCount: 10
+replicaCount: 15
 
 name: "blog-app-apis"
 api_port: 9090
