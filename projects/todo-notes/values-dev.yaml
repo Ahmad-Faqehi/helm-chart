@@ -68,7 +68,7 @@ resources:
     cpu: 200m
     memory: 504Mi
   requests:
-    cpu: 150m
+    cpu: 4
     memory: 200Mi
 
 livenessProbe:
