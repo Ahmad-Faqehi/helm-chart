@@ -1,5 +1,5 @@
 # Default values for the application
-replicaCount: 6
+replicaCount: 1
 
 name: "blog-app-apis"
 api_port: 9090
@@ -67,7 +67,7 @@ resources:
     cpu: 900m
     memory: 1024Mi
   requests:
-    cpu: 450m
+    cpu: 350m
     memory: 500Mi
 
 livenessProbe:
