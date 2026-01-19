@@ -14,7 +14,7 @@ spec:
         - ../projects/blog-app-apis/values-dev.yaml
       values: |-
         image:
-          tag: 21
+          tag: 23
   destination:
     server: https://kubernetes.default.svc
     namespace: dev-blog-app-apis
