@@ -14,7 +14,7 @@ spec:
         - ../projects/blog-app-apis/values-staging.yaml
       values: |-
         image:
-          tag: 17
+          tag: 24
   destination:
     server: https://kubernetes.default.svc
     namespace: staging-blog-app-apis
