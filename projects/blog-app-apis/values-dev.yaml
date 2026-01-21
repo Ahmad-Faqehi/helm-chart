@@ -123,7 +123,7 @@ configMap:
   data:
     REDIS_PORT: "6379"
     SPRING_DATASOURCE_USERNAME: "avnadmin"
-    REDIS_ENABLED: "false"
+    REDIS_ENABLED: "true"
     demo : "value"
 
 
