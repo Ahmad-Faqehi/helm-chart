@@ -128,7 +128,7 @@ secret:
   enabled: false
   # Provide encrypted data (created with kubeseal) as key: sealed-value
   encryptedData: []
-  data: {}
+
 
 env: []
 envFrom: []
