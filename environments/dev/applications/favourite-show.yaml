@@ -14,7 +14,7 @@ spec:
         - ../projects/favourite-show/values-dev.yaml
       values: |-
         image:
-          tag: 5
+          tag: 6
   destination:
     server: https://kubernetes.default.svc
     namespace: dev-favourite-show
