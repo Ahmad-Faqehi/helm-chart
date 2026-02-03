@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: staging-favourite-show-frontend
+  namespace: argocd
+spec:
+  project: staging
+  source:
+    repoURL: https://github.com/Ahmad-Faqehi/helm-chart.git
+    targetRevision: main
+    path: charts/
+    helm:
+      valueFiles:
+        - ../projects/favourite-show-frontend/values-staging.yaml
+      values: |-
+        image:
+          tag: 6
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging-favourite-show-frontend
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
