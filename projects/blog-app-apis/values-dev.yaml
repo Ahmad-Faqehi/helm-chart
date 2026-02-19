@@ -68,7 +68,7 @@ resources:
     memory: 1024Mi
   requests:
     cpu: 350m
-    memory: 500Mi
+    memory: 1024Mi
 
 livenessProbe:
   enabled: true
@@ -101,9 +101,9 @@ startupProbe:
   failureThreshold: 30
 
 autoscaling:
-  enabled: false
+  enabled: true
   minReplicas: 2
-  maxReplicas: 10
+  maxReplicas: 5
   targetCPUUtilizationPercentage: 80
   targetMemoryUtilizationPercentage: 80
 
