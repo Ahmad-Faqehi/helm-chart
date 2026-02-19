@@ -124,7 +124,8 @@ configMap:
     REDIS_PORT: "6379"
     SPRING_DATASOURCE_USERNAME: "avnadmin"
     REDIS_ENABLED: "true"
-    demo : "value"
+    demo: "value"
+    JAVA_TOOL_OPTIONS: "-XX:MaxRAMPercentage=75.0 -XX:+UseParallelGC"
 
 
 secret:
