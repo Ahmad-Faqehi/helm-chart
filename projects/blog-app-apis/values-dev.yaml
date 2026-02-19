@@ -125,7 +125,7 @@ configMap:
     SPRING_DATASOURCE_USERNAME: "avnadmin"
     REDIS_ENABLED: "true"
     demo: "value"
-    JAVA_TOOL_OPTIONS: "-XX:MaxRAMPercentage=100.0 -XX:+UseParallelGC"
+    JAVA_TOOL_OPTIONS: "-XX:MaxRAMPercentage=120.0 -XX:+UseParallelGC"
 
 
 secret:
