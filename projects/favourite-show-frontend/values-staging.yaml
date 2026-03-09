@@ -1,5 +1,5 @@
 # Default values for the application
-replicaCount: 0
+replicaCount: 1
 
 name: "favourite-show-frontend"
 api_port: 80
